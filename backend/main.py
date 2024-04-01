@@ -737,3 +737,15 @@ async def carpart(billdata : billdata):
     }
     coluser.update_one({"_id":getdatauser["_id"] }  ,{'$push': {"bill_list": latest_id}})
     colbill.insert_one(data_dict)
+    
+
+
+
+        # s3 = boto3.client('s3', aws_access_key_id='***', aws_secret_access_key='***')
+        # # Download the model file from S3
+        # obj = s3.get_object(Bucket='carimageapp', Key='**/ไฟลโมเดล')
+        # buffer = io.BytesIO(obj['Body'].read())
+        # model = models.resnet50()
+        # model_state_dict = torch.load(buffer, map_location='cpu')
+        # model.load_state_dict(model_state_dict)
+        # Load the model
