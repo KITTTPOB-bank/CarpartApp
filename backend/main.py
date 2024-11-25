@@ -147,14 +147,7 @@ async def forgotpassword(data : forgot):
         # creates SMTP session
         s = smtplib.SMTP('smtp.gmail.com', 587)
         s.starttls()
-        s.login("turtleknight.2018@gmail.com", "ccuq cxjh maeu sfwt")
-        message = MIMEMultipart()
-        message["From"] = "turtleknight.2018@gmail.com"
-        message["To"] = "mpple031@gmail.com"
-        message["Subject"] = "รีเซ็ตรหัสผ่าน CARNANAPP"
-        message.attach(MIMEText(f"รหัสผ่านใหม่ของคุณคือ {str(ran)}", 'plain', 'utf-8'))
-        s.sendmail("turtleknight.2018@gmail.com", "mpple031@gmail.com",  message.as_string())
-        s.quit()
+  
         col.update_one(
         {"_id": user_data["_id"]},
         {"$set": {
